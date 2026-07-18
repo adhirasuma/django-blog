@@ -23,7 +23,7 @@ STATUS_CHOICES=(
     ("Published","Published")
 )
 
-class Blog(models.Model):
+class Blog(models.Model):#Model name
     title=models.CharField(max_length=100)
     slug=models.SlugField(max_length=150,unique=True,blank=True)#part of url that identifies a page on a website
     category=models.ForeignKey(Category,on_delete=models.CASCADE)
