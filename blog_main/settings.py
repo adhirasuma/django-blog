@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!miz(u(obc!5wg(^zc@#uaqpd3pn*_zccbjj_266#370z@$a#p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']#work on all the host
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blogs',
+    'assignments',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +64,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'blogs.context_processors.get_categories',#custom context
+                'blogs.context_processors.get_social_links',
             ],
         },
     },
@@ -116,10 +118,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR /'static'
+STATIC_URL = '/static/'
+# STATIC_ROOT = BASE_DIR /'static'
 STATICFILES_DIRS=[
-    'blog_main/static',
+    BASE_DIR/ 'blog_main' /'static',
 ]
 
 #Media file congiration
