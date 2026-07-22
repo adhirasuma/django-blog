@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blogs',
     'assignments',
+    'crispy_forms',
+    'crispy_bootstrap4',
+
 ]
 
 MIDDLEWARE = [
@@ -61,7 +64,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
+                'django.contrib.auth.context_processors.auth',#user object(reason in html)
                 'django.contrib.messages.context_processors.messages',
                 'blogs.context_processors.get_categories',#custom context
                 'blogs.context_processors.get_social_links',
@@ -127,3 +130,5 @@ STATICFILES_DIRS=[
 #Media file congiration
 MEDIA_URL ='/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
