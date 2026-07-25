@@ -12,3 +12,4 @@ class BlogAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Category)#Default:Django makes project to plural
 admin.site.register(models.Blog,BlogAdmin)
+admin.site.register(models.Comment)
